@@ -118,7 +118,10 @@ footer .grande{position:absolute;right:-60px;top:-60px;width:clamp(180px,30vw,38
 /* pie compacto (home) */
 footer.pie{background:none;color:var(--texto);overflow:visible;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:20px var(--margen) 28px;border-top:1px solid color-mix(in srgb,var(--linea) 50%,transparent);font-size:14px}
 .pie a{text-decoration:none;font-weight:500}
-.pie .redes{display:flex;gap:16px}
+footer.pie{padding:20px var(--margen) 28px}
+footer.pie .redes{display:flex;gap:16px;margin:0}
+footer.pie .redes a{padding:0}
+footer.pie small{margin:0}
 .pie .redes a:hover{text-decoration:underline}
 
 /* ===== SELECTOR DE PALETA (temporal) ===== */
