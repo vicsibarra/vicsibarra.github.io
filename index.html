@@ -3,18 +3,210 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Victoria Ibarra — Portfolio</title>
+<title>Victoria Ibarra — Dirección de arte</title>
+<meta name="description" content="Portfolio de Victoria Ibarra: dirección de arte, publicidad y contenido.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  html,body{margin:0;height:100%;background:#0d0d0d;color:#f2f2f2;font-family:system-ui,sans-serif}
-  body{display:grid;place-items:center;text-align:center}
-  h1{font-size:clamp(2rem,6vw,4rem);margin:0;letter-spacing:-.02em}
-  p{opacity:.6;margin-top:.5rem}
+  :root{
+    --naranja:#E8543A;
+    --crema:#F6EBD3;
+    --celeste:#8EC3E6;
+    --azul:#3F6FB5;
+    --tinta:#2A1E1A;
+    --radio:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--crema);color:var(--tinta);font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  .serif{font-family:Fraunces,Georgia,serif}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:18px clamp(20px,5vw,64px);background:color-mix(in srgb,var(--crema) 88%,transparent);backdrop-filter:blur(8px)}
+  nav .logo{font-family:Fraunces,serif;font-weight:600;font-size:20px;text-decoration:none}
+  nav ul{display:flex;gap:clamp(14px,3vw,32px);list-style:none}
+  nav ul a{text-decoration:none;font-size:14px;font-weight:500;position:relative}
+  nav ul a::after{content:"";position:absolute;left:0;bottom:-3px;width:100%;height:2px;background:var(--naranja);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+  nav ul a:hover::after{transform:scaleX(1)}
+
+  /* INTRO */
+  .intro{padding:clamp(48px,10vw,120px) clamp(20px,5vw,64px) clamp(40px,6vw,72px);max-width:1200px}
+  .intro h1{font-family:Fraunces,serif;font-weight:400;font-size:clamp(40px,8vw,104px);line-height:.95;letter-spacing:-.03em}
+  .intro h1 em{color:var(--naranja)}
+  .intro p{margin-top:24px;max-width:460px;font-size:17px;opacity:.75}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+  .chip{padding:6px 14px;border-radius:99px;font-size:13px;font-weight:500;background:var(--celeste)}
+  .chip:nth-child(2){background:var(--naranja);color:var(--crema)}
+  .chip:nth-child(3){background:var(--tinta);color:var(--crema)}
+
+  section{padding:0 clamp(20px,5vw,64px) clamp(64px,10vw,120px)}
+  .titulo-seccion{display:flex;justify-content:space-between;align-items:baseline;border-top:1.5px solid var(--tinta);padding-top:16px;margin-bottom:32px}
+  .titulo-seccion h2{font-family:Fraunces,serif;font-weight:400;font-size:clamp(28px,4vw,44px)}
+  .titulo-seccion span{font-size:13px;opacity:.6}
+
+  /* GRID DE PROYECTOS */
+  .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(16px,2.5vw,32px)}
+  .card{grid-column:span 4;text-decoration:none;display:block}
+  .card.grande{grid-column:span 8}
+  .card .media{position:relative;aspect-ratio:4/3;border-radius:var(--radio);overflow:hidden;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+  .card.grande .media{aspect-ratio:16/9}
+  .card:hover .media{transform:rotate(-1.2deg) scale(1.015)}
+  .card .media .slide{position:absolute;inset:0;display:grid;place-items:center;font-family:Fraunces,serif;font-size:clamp(20px,2.4vw,32px);opacity:0;transition:opacity .6s}
+  .card .media .slide.activa{opacity:1}
+  .card .info{display:flex;justify-content:space-between;gap:12px;margin-top:12px}
+  .card h3{font-family:Fraunces,serif;font-weight:400;font-size:22px}
+  .card .meta{font-size:13px;opacity:.6;text-align:right}
+
+  /* COLONIA / INSTAGRAM */
+  .feed{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,72px);align-items:center;background:var(--azul);color:var(--crema);border-radius:calc(var(--radio)*1.5);padding:clamp(28px,5vw,64px);overflow:hidden}
+  .feed h3{font-family:Fraunces,serif;font-weight:400;font-size:clamp(32px,4.5vw,56px);line-height:1}
+  .feed p{margin-top:16px;max-width:380px;opacity:.85}
+  .telefono{justify-self:center;width:min(280px,70vw);aspect-ratio:9/19;border-radius:40px;background:var(--tinta);padding:10px;box-shadow:0 30px 60px -20px rgba(0,0,0,.45);transform:rotate(4deg)}
+  .pantalla{height:100%;border-radius:32px;overflow:hidden;background:var(--crema);position:relative}
+  .pantalla .scroll{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;animation:feed 22s linear infinite}
+  .feed:hover .pantalla .scroll{animation-play-state:paused}
+  .post{aspect-ratio:4/5;display:grid;place-items:center;font-size:10px;font-weight:500;color:var(--crema)}
+  .post:nth-child(4n+1){background:var(--naranja)}
+  .post:nth-child(4n+2){background:var(--celeste);color:var(--tinta)}
+  .post:nth-child(4n+3){background:#D9C4A0;color:var(--tinta)}
+  .post:nth-child(4n+4){background:var(--azul)}
+  @keyframes feed{to{transform:translateY(-50%)}}
+
+  /* SOBRE MÍ */
+  .sobre{display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,5vw,72px);align-items:start}
+  .foto{aspect-ratio:4/5;border-radius:var(--radio);background:var(--celeste);display:grid;place-items:center;font-family:Fraunces,serif;transform:rotate(-2deg)}
+  .sobre p{font-size:clamp(18px,2vw,24px);line-height:1.4;font-family:Fraunces,serif;margin-bottom:20px}
+  .sobre p em{color:var(--naranja)}
+  .herramientas{font-family:Inter,sans-serif;font-size:14px;opacity:.7}
+
+  /* CONTACTO */
+  footer{background:var(--naranja);color:var(--crema);padding:clamp(48px,8vw,96px) clamp(20px,5vw,64px) 28px}
+  footer a.mail{font-family:Fraunces,serif;font-size:clamp(32px,7vw,88px);line-height:1;text-decoration:none;display:inline-block;border-bottom:2px solid transparent;transition:border-color .3s}
+  footer a.mail:hover{border-color:var(--crema)}
+  footer .redes{display:flex;gap:24px;margin-top:40px;font-size:14px;font-weight:500}
+  footer small{display:block;margin-top:48px;opacity:.7;font-size:12px}
+
+  /* APARICIÓN AL SCROLLEAR */
+  .aparece{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+  .aparece.visible{opacity:1;transform:none}
+
+  @media (max-width:800px){
+    .card,.card.grande{grid-column:span 12}
+    .feed,.sobre{grid-template-columns:1fr}
+    .telefono{transform:rotate(2deg)}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .aparece{opacity:1;transform:none}
+  }
 </style>
 </head>
 <body>
-  <div>
-    <h1>Grita en Silencio</h1>
-    <p>Portfolio nuevo en construcción ✦</p>
+
+<nav>
+  <a href="#" class="logo">Victoria Ibarra</a>
+  <ul>
+    <li><a href="#trabajos">Trabajos</a></li>
+    <li><a href="#sobre">Sobre mí</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+<header class="intro">
+  <h1 class="aparece">Dirección de arte<br>con <em>algo</em> para decir.</h1>
+  <p class="aparece">Publicidad, contenido y producción creativa desde Buenos Aires.</p>
+  <div class="chips aparece">
+    <span class="chip">Dirección de arte</span>
+    <span class="chip">Copywriting</span>
+    <span class="chip">Social media</span>
   </div>
+</header>
+
+<section id="trabajos">
+  <div class="titulo-seccion"><h2>Trabajos</h2><span>2024 — 2026</span></div>
+  <div class="grid">
+    <a class="card grande aparece" href="#">
+      <div class="media" data-colores="#2A1E1A,#4E6B3A,#E8543A"><div class="slide">No alimentes a la bestia</div></div>
+      <div class="info"><h3>No alimentes a la bestia</h3><span class="meta">Campaña<br>Dirección de arte</span></div>
+    </a>
+    <a class="card aparece" href="#">
+      <div class="media" data-colores="#8EC3E6,#3F6FB5,#F6EBD3"><div class="slide">Bruja en escoba</div></div>
+      <div class="info"><h3>Proyecto bruja</h3><span class="meta">Gráfica</span></div>
+    </a>
+    <a class="card aparece" href="#">
+      <div class="media" data-colores="#3F6FB5,#2A1E1A,#8EC3E6"><div class="slide">Caribbean Cinemas</div></div>
+      <div class="info"><h3>Caribbean Cinemas</h3><span class="meta">Branding</span></div>
+    </a>
+    <a class="card aparece" href="#">
+      <div class="media" data-colores="#D9C4A0,#E8543A,#8EC3E6"><div class="slide">Studia</div></div>
+      <div class="info"><h3>Studia</h3><span class="meta">UX/UI</span></div>
+    </a>
+    <a class="card aparece" href="#">
+      <div class="media" data-colores="#F2C4C0,#E8543A,#F6EBD3"><div class="slide">Pichichus</div></div>
+      <div class="info"><h3>Pichichus</h3><span class="meta">Sitio web</span></div>
+    </a>
+  </div>
+</section>
+
+<section>
+  <div class="feed aparece">
+    <div>
+      <span class="chip" style="color:var(--tinta)">Social media</span>
+      <h3 style="margin-top:20px">Colonia Express</h3>
+      <p>Piezas para Instagram de la naviera: copy, dirección de arte y calendario de contenido. Pasá el mouse por el teléfono para frenar el feed.</p>
+    </div>
+    <div class="telefono"><div class="pantalla"><div class="scroll" id="posts"></div></div></div>
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="titulo-seccion"><h2>Sobre mí</h2><span>Buenos Aires</span></div>
+  <div class="sobre">
+    <div class="foto aparece">tu foto acá</div>
+    <div class="aparece">
+      <p>Soy Victoria. Vengo del diseño multimedial y me metí en la publicidad porque me gusta que las ideas <em>hagan ruido</em>.</p>
+      <p>Me obsesionan los detalles, el copy que se queda pegado y las piezas que se ven bien en un feed lleno de cosas.</p>
+      <p class="herramientas">Photoshop · Illustrator · After Effects · Premiere · Figma · Canva · Generación de imagen con IA</p>
+    </div>
+  </div>
+</section>
+
+<footer id="contacto">
+  <p style="opacity:.8;margin-bottom:12px">¿Hacemos algo juntas?</p>
+  <a class="mail" href="mailto:hola@ejemplo.com">hola@ejemplo.com</a>
+  <div class="redes">
+    <a href="#">Behance</a><a href="#">Instagram</a><a href="#">LinkedIn</a>
+  </div>
+  <small>© 2026 Victoria Ibarra</small>
+</footer>
+
+<script>
+  // Aparición suave al scrollear
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+  }), {threshold:.15});
+  document.querySelectorAll('.aparece').forEach(el => io.observe(el));
+
+  // Cada tarjeta: las "fotos" se van pasando al pasar el mouse
+  document.querySelectorAll('.card .media').forEach(media => {
+    const colores = media.dataset.colores.split(',');
+    const label = media.querySelector('.slide').textContent;
+    media.innerHTML = colores.map((c,i) =>
+      `<div class="slide${i===0?' activa':''}" style="background:${c};color:${['#2A1E1A','#3F6FB5','#E8543A','#4E6B3A'].includes(c)?'#F6EBD3':'#2A1E1A'}">${label} · ${i+1}</div>`
+    ).join('');
+    const slides = media.querySelectorAll('.slide');
+    let i = 0, timer;
+    const pasar = () => { slides[i].classList.remove('activa'); i = (i+1)%slides.length; slides[i].classList.add('activa'); };
+    media.parentElement.addEventListener('mouseenter', () => { pasar(); timer = setInterval(pasar, 900); });
+    media.parentElement.addEventListener('mouseleave', () => clearInterval(timer));
+  });
+
+  // Feed de Instagram (placeholder: 12 posts, duplicados para loop infinito)
+  const posts = Array.from({length:12}, (_,i) => `<div class="post">post ${i+1}</div>`).join('');
+  document.getElementById('posts').innerHTML = posts + posts;
+</script>
 </body>
 </html>
