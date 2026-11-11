@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-tema="sabbia">
+<html lang="es" data-tema="blanco">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,6 +10,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
   /* ===== PALETAS ===== */
+  [data-tema="blanco"]{ --fondo:#FAF8F6; --texto:#AA0003; --fuerte:#AA0003; --sobre-fuerte:#FFD6DE; --fuerte2:#FFA1C2; --sobre-fuerte2:#AA0003; --detalle:#AA0003; --suave:#FFD6DE; --suave2:#FFF3B2; --estrella:#FFA1C2; }
+  [data-tema="blanco"] .intro h1 em,[data-tema="blanco"] .sobre p em{background:linear-gradient(transparent 58%,#FFF3B2 58% 92%,transparent 92%);padding:0 .08em}
+  [data-tema="blanco"] .titulo-seccion{border-top-color:#FFA1C2}
+  [data-tema="blanco"] .cinta .estrella{fill:#FFF3B2}
   [data-tema="sabbia"]{ --fondo:#F4E7D6; --texto:#2B1630; --fuerte:#EB6B2F; --sobre-fuerte:#FFF4E8; --fuerte2:#E25A9C; --sobre-fuerte2:#FFF0F7; --detalle:#EB6B2F; --suave:#F7C7E8; --suave2:#D4B5F6; --estrella:#E25A9C; }
   [data-tema="chilli"]{ --fondo:#FFF1F3; --texto:#4A0A0C; --fuerte:#AA0003; --sobre-fuerte:#FFD6DE; --fuerte2:#FFA1C2; --sobre-fuerte2:#5A0002; --detalle:#AA0003; --suave:#FFD6DE; --suave2:#FFF3B2; --estrella:#AA0003; }
   [data-tema="retro"]{ --fondo:#F3EAD2; --texto:#3A1424; --fuerte:#B33355; --sobre-fuerte:#FBE9EF; --fuerte2:#A9C6E3; --sobre-fuerte2:#2A1A3A; --detalle:#B33355; --suave:#EBB8CB; --suave2:#A9C6E3; --estrella:#B33355; }
@@ -240,6 +244,7 @@
 
 <div class="paletas" role="group" aria-label="Probar paleta">
   Paleta
+  <button data-t="blanco" style="background:conic-gradient(#AA0003 0 25%,#FFA1C2 0 50%,#FFF3B2 0 75%,#FAF8F6 0);border-color:#ddd" title="Blanco con Chilli"></button>
   <button data-t="sabbia" style="background:conic-gradient(#EB6B2F 0 33%,#E25A9C 0 66%,#D4B5F6 0)" title="Sabbia: naranja, rosa, lavanda"></button>
   <button data-t="chilli" style="background:conic-gradient(#AA0003 0 33%,#FFA1C2 0 66%,#FFF3B2 0)" title="Chilli: rojo, rosa, limón"></button>
   <button data-t="retro" style="background:conic-gradient(#B33355 0 33%,#EBB8CB 0 66%,#A9C6E3 0)" title="Retro: berry, chicle, celeste"></button>
@@ -252,7 +257,7 @@
   const botones = document.querySelectorAll('.paletas button');
   const usar = t => { html.dataset.tema = t; botones.forEach(b => b.setAttribute('aria-pressed', b.dataset.t === t)); try { localStorage.setItem('tema', t); } catch(e) {} };
   let guardado = null; try { guardado = localStorage.getItem('tema'); } catch(e) {}
-  usar(guardado || 'sabbia');
+  usar(guardado || 'blanco');
   botones.forEach(b => b.addEventListener('click', () => usar(b.dataset.t)));
 
   // Aparición suave al scrollear
