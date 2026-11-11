@@ -10,11 +10,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --naranja:#E8543A;
-    --crema:#F6EBD3;
-    --celeste:#8EC3E6;
-    --azul:#3F6FB5;
-    --tinta:#2A1E1A;
+    --ciruela:#6E1E3B;
+    --crema:#F5ECDD;
+    --amarillo:#F9DD8A;
+    --terracota:#D76A4D;
+    --tinta:#3A1026;
     --radio:18px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -29,17 +29,17 @@
   nav .logo{font-family:Fraunces,serif;font-weight:600;font-size:20px;text-decoration:none}
   nav ul{display:flex;gap:clamp(14px,3vw,32px);list-style:none}
   nav ul a{text-decoration:none;font-size:14px;font-weight:500;position:relative}
-  nav ul a::after{content:"";position:absolute;left:0;bottom:-3px;width:100%;height:2px;background:var(--naranja);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+  nav ul a::after{content:"";position:absolute;left:0;bottom:-3px;width:100%;height:2px;background:var(--ciruela);transform:scaleX(0);transform-origin:left;transition:transform .3s}
   nav ul a:hover::after{transform:scaleX(1)}
 
   /* INTRO */
   .intro{padding:clamp(48px,10vw,120px) clamp(20px,5vw,64px) clamp(40px,6vw,72px);max-width:1200px}
   .intro h1{font-family:Fraunces,serif;font-weight:400;font-size:clamp(40px,8vw,104px);line-height:.95;letter-spacing:-.03em}
-  .intro h1 em{color:var(--naranja)}
+  .intro h1 em{color:var(--terracota)}
   .intro p{margin-top:24px;max-width:460px;font-size:17px;opacity:.75}
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
-  .chip{padding:6px 14px;border-radius:99px;font-size:13px;font-weight:500;background:var(--celeste)}
-  .chip:nth-child(2){background:var(--naranja);color:var(--crema)}
+  .chip{padding:6px 14px;border-radius:99px;font-size:13px;font-weight:500;background:var(--amarillo)}
+  .chip:nth-child(2){background:var(--ciruela);color:var(--crema)}
   .chip:nth-child(3){background:var(--tinta);color:var(--crema)}
 
   section{padding:0 clamp(20px,5vw,64px) clamp(64px,10vw,120px)}
@@ -61,7 +61,7 @@
   .card .meta{font-size:13px;opacity:.6;text-align:right}
 
   /* COLONIA / INSTAGRAM */
-  .feed{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,72px);align-items:center;background:var(--azul);color:var(--crema);border-radius:calc(var(--radio)*1.5);padding:clamp(28px,5vw,64px);overflow:hidden}
+  .feed{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,72px);align-items:center;background:var(--ciruela);color:var(--crema);border-radius:calc(var(--radio)*1.5);padding:clamp(28px,5vw,64px);overflow:hidden}
   .feed h3{font-family:Fraunces,serif;font-weight:400;font-size:clamp(32px,4.5vw,56px);line-height:1}
   .feed p{margin-top:16px;max-width:380px;opacity:.85}
   .telefono{justify-self:center;width:min(280px,70vw);aspect-ratio:9/19;border-radius:40px;background:var(--tinta);padding:10px;box-shadow:0 30px 60px -20px rgba(0,0,0,.45);transform:rotate(4deg)}
@@ -69,21 +69,21 @@
   .pantalla .scroll{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;animation:feed 22s linear infinite}
   .feed:hover .pantalla .scroll{animation-play-state:paused}
   .post{aspect-ratio:4/5;display:grid;place-items:center;font-size:10px;font-weight:500;color:var(--crema)}
-  .post:nth-child(4n+1){background:var(--naranja)}
-  .post:nth-child(4n+2){background:var(--celeste);color:var(--tinta)}
-  .post:nth-child(4n+3){background:#D9C4A0;color:var(--tinta)}
-  .post:nth-child(4n+4){background:var(--azul)}
+  .post:nth-child(4n+1){background:var(--terracota)}
+  .post:nth-child(4n+2){background:var(--amarillo);color:var(--tinta)}
+  .post:nth-child(4n+3){background:#E8D7BC;color:var(--tinta)}
+  .post:nth-child(4n+4){background:var(--ciruela)}
   @keyframes feed{to{transform:translateY(-50%)}}
 
   /* SOBRE MÍ */
   .sobre{display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,5vw,72px);align-items:start}
-  .foto{aspect-ratio:4/5;border-radius:var(--radio);background:var(--celeste);display:grid;place-items:center;font-family:Fraunces,serif;transform:rotate(-2deg)}
+  .foto{aspect-ratio:4/5;border-radius:var(--radio);background:var(--amarillo);display:grid;place-items:center;font-family:Fraunces,serif;transform:rotate(-2deg)}
   .sobre p{font-size:clamp(18px,2vw,24px);line-height:1.4;font-family:Fraunces,serif;margin-bottom:20px}
-  .sobre p em{color:var(--naranja)}
+  .sobre p em{color:var(--terracota)}
   .herramientas{font-family:Inter,sans-serif;font-size:14px;opacity:.7}
 
   /* CONTACTO */
-  footer{background:var(--naranja);color:var(--crema);padding:clamp(48px,8vw,96px) clamp(20px,5vw,64px) 28px}
+  footer{background:var(--ciruela);color:var(--crema);padding:clamp(48px,8vw,96px) clamp(20px,5vw,64px) 28px}
   footer a.mail{font-family:Fraunces,serif;font-size:clamp(32px,7vw,88px);line-height:1;text-decoration:none;display:inline-block;border-bottom:2px solid transparent;transition:border-color .3s}
   footer a.mail:hover{border-color:var(--crema)}
   footer .redes{display:flex;gap:24px;margin-top:40px;font-size:14px;font-weight:500}
@@ -129,23 +129,23 @@
   <div class="titulo-seccion"><h2>Trabajos</h2><span>2024 — 2026</span></div>
   <div class="grid">
     <a class="card grande aparece" href="#">
-      <div class="media" data-colores="#2A1E1A,#4E6B3A,#E8543A"><div class="slide">No alimentes a la bestia</div></div>
+      <div class="media" data-colores="#3A1026,#6E1E3B,#D76A4D"><div class="slide">No alimentes a la bestia</div></div>
       <div class="info"><h3>No alimentes a la bestia</h3><span class="meta">Campaña<br>Dirección de arte</span></div>
     </a>
     <a class="card aparece" href="#">
-      <div class="media" data-colores="#8EC3E6,#3F6FB5,#F6EBD3"><div class="slide">Bruja en escoba</div></div>
+      <div class="media" data-colores="#F9DD8A,#D76A4D,#F5ECDD"><div class="slide">Bruja en escoba</div></div>
       <div class="info"><h3>Proyecto bruja</h3><span class="meta">Gráfica</span></div>
     </a>
     <a class="card aparece" href="#">
-      <div class="media" data-colores="#3F6FB5,#2A1E1A,#8EC3E6"><div class="slide">Caribbean Cinemas</div></div>
+      <div class="media" data-colores="#6E1E3B,#3A1026,#F9DD8A"><div class="slide">Caribbean Cinemas</div></div>
       <div class="info"><h3>Caribbean Cinemas</h3><span class="meta">Branding</span></div>
     </a>
     <a class="card aparece" href="#">
-      <div class="media" data-colores="#D9C4A0,#E8543A,#8EC3E6"><div class="slide">Studia</div></div>
+      <div class="media" data-colores="#E8D7BC,#D76A4D,#F9DD8A"><div class="slide">Studia</div></div>
       <div class="info"><h3>Studia</h3><span class="meta">UX/UI</span></div>
     </a>
     <a class="card aparece" href="#">
-      <div class="media" data-colores="#F2C4C0,#E8543A,#F6EBD3"><div class="slide">Pichichus</div></div>
+      <div class="media" data-colores="#F2C9B8,#6E1E3B,#F5ECDD"><div class="slide">Pichichus</div></div>
       <div class="info"><h3>Pichichus</h3><span class="meta">Sitio web</span></div>
     </a>
   </div>
@@ -195,7 +195,7 @@
     const colores = media.dataset.colores.split(',');
     const label = media.querySelector('.slide').textContent;
     media.innerHTML = colores.map((c,i) =>
-      `<div class="slide${i===0?' activa':''}" style="background:${c};color:${['#2A1E1A','#3F6FB5','#E8543A','#4E6B3A'].includes(c)?'#F6EBD3':'#2A1E1A'}">${label} · ${i+1}</div>`
+      `<div class="slide${i===0?' activa':''}" style="background:${c};color:${['#3A1026','#6E1E3B','#D76A4D'].includes(c)?'#F6EBD3':'#2A1E1A'}">${label} · ${i+1}</div>`
     ).join('');
     const slides = media.querySelectorAll('.slide');
     let i = 0, timer;
