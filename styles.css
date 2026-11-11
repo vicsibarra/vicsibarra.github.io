@@ -43,18 +43,18 @@ nav ul a{text-decoration:none;font-size:14px;font-weight:500;position:relative;w
 nav ul a::after{content:"";position:absolute;left:0;bottom:-3px;width:100%;height:2px;background:var(--texto);transform:scaleX(0);transform-origin:left;transition:transform .3s}
 nav ul a:hover::after,nav ul a[aria-current="page"]::after{transform:scaleX(1)}
 
-main{padding:clamp(96px,12vw,130px) var(--margen) clamp(64px,10vw,120px)}
+main{padding:clamp(88px,10vw,110px) var(--margen) clamp(48px,8vw,96px)}
 
-.titulo-seccion{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px}
-.titulo-seccion h1,.titulo-seccion h2{font-family:var(--titulos);font-weight:600;letter-spacing:-.02em;font-size:clamp(28px,4vw,44px)}
+.titulo-seccion{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px}
+.titulo-seccion h1,.titulo-seccion h2{font-family:var(--titulos);font-weight:600;letter-spacing:-.02em;font-size:clamp(24px,3vw,36px)}
 .titulo-seccion span{font-size:13px;opacity:.6}
 
 /* ===== GRID DE TRABAJOS ===== */
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2vw,24px)}
+.grid{display:grid;grid-auto-flow:dense;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.4vw,18px)}
 .card{position:relative;display:block;text-decoration:none;border-radius:var(--radio);overflow:hidden;aspect-ratio:4/3;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
 .card.ancha{grid-column:span 2;aspect-ratio:auto}
 .card:hover{transform:rotate(-1deg) scale(1.015)}
-.slide{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--titulos);font-weight:600;font-size:clamp(18px,2.2vw,28px);opacity:0;transition:opacity .6s,background .4s}
+.slide{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--titulos);font-weight:600;font-size:clamp(14px,1.5vw,20px);opacity:0;transition:opacity .6s,background .4s}
 .slide.activa{opacity:1}
 .t1{background:var(--fuerte);color:var(--sobre-fuerte)}
 .t2{background:var(--suave);color:var(--texto)}
@@ -62,23 +62,24 @@ main{padding:clamp(96px,12vw,130px) var(--margen) clamp(64px,10vw,120px)}
 .t4{background:var(--fuerte2);color:var(--sobre-fuerte2)}
 .t5{background:var(--texto);color:var(--fondo)}
 /* etiqueta glass sobre cada trabajo */
-.etiqueta{position:absolute;left:12px;bottom:12px;right:12px;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 16px;border-radius:14px;color:var(--texto);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
-.etiqueta h3{font-family:var(--titulos);font-weight:600;font-size:18px;letter-spacing:-.01em;display:flex;align-items:center;gap:8px}
-.etiqueta small{font-size:12px;opacity:.75;text-align:right}
+.etiqueta{position:absolute;left:8px;bottom:8px;right:8px;display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 12px;border-radius:12px;color:var(--texto);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.etiqueta h3{font-family:var(--titulos);font-weight:600;font-size:15px;line-height:1.15;letter-spacing:-.01em;display:flex;align-items:center;gap:8px}
+.etiqueta small{font-size:11px;opacity:.75;text-align:right}
 .etiqueta .estrella{width:13px;height:13px;transition:transform .5s}
 .card:hover .etiqueta .estrella{transform:rotate(180deg) scale(1.2)}
 
 /* Colonia: teléfono con feed */
-.card.feed{display:grid;grid-template-columns:1fr 1fr;align-items:center;background:var(--fuerte);color:var(--sobre-fuerte);padding:clamp(20px,3vw,40px);overflow:hidden}
+.card.feed{display:grid;grid-template-columns:1.2fr 1fr;align-items:center;background:var(--fuerte);color:var(--sobre-fuerte);padding:clamp(16px,2vw,28px);overflow:hidden;aspect-ratio:auto;min-height:220px}
 .card.feed:hover{transform:none}
-.feed .texto h3{font-family:var(--titulos);font-weight:600;font-size:clamp(28px,3.6vw,48px);line-height:1;letter-spacing:-.02em}
-.feed .texto p{margin-top:12px;max-width:320px;opacity:.85;font-size:15px}
-.feed .chip{display:inline-block;margin-bottom:14px}
-.telefono{justify-self:center;width:min(220px,55vw);aspect-ratio:9/19;border-radius:34px;background:var(--texto);padding:8px;box-shadow:0 30px 60px -20px rgba(0,0,0,.45);transform:rotate(4deg)}
-.pantalla{height:100%;border-radius:27px;overflow:hidden;background:var(--fondo)}
+.feed .texto h3{font-family:var(--titulos);font-weight:600;font-size:clamp(22px,2.4vw,34px);line-height:1;letter-spacing:-.02em}
+.feed .texto p{margin-top:8px;max-width:300px;opacity:.85;font-size:14px}
+.feed .chip{display:inline-block;margin-bottom:10px}
+.feed .texto{position:relative;z-index:1}
+.telefono{position:absolute;right:9%;top:14%;width:min(150px,36vw);aspect-ratio:9/19;border-radius:26px;background:var(--texto);padding:6px;box-shadow:0 30px 60px -20px rgba(0,0,0,.45);transform:rotate(4deg)}
+.pantalla{height:100%;border-radius:21px;overflow:hidden;background:var(--fondo)}
 .pantalla .scroll{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;animation:feed 22s linear infinite}
 .feed:hover .pantalla .scroll{animation-play-state:paused}
-.post{aspect-ratio:4/5;display:grid;place-items:center;font-size:10px;font-weight:500}
+.post{aspect-ratio:4/5;display:grid;place-items:center;font-size:8px;font-weight:500}
 @keyframes feed{to{transform:translateY(-50%)}}
 
 .chip{padding:6px 14px;border-radius:99px;font-size:13px;font-weight:500;background:var(--suave);color:var(--texto)}
@@ -114,6 +115,12 @@ footer .redes a{text-decoration:none;font-size:14px;font-weight:500;padding:8px 
 footer small{display:block;margin-top:48px;opacity:.7;font-size:12px}
 footer .grande{position:absolute;right:-60px;top:-60px;width:clamp(180px,30vw,380px);height:auto;fill:var(--sobre-fuerte2);opacity:.15}
 
+/* pie compacto (home) */
+footer.pie{background:none;color:var(--texto);overflow:visible;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:20px var(--margen) 28px;border-top:1px solid color-mix(in srgb,var(--linea) 50%,transparent);font-size:14px}
+.pie a{text-decoration:none;font-weight:500}
+.pie .redes{display:flex;gap:16px}
+.pie .redes a:hover{text-decoration:underline}
+
 /* ===== SELECTOR DE PALETA (temporal) ===== */
 .paletas{position:fixed;right:16px;bottom:16px;z-index:20;display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:99px;font-size:12px;font-weight:500}
 .paletas button{width:24px;height:24px;border-radius:50%;border:2px solid transparent;cursor:pointer;padding:0}
@@ -123,19 +130,24 @@ footer .grande{position:absolute;right:-60px;top:-60px;width:clamp(180px,30vw,38
 .aparece{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
 .aparece.visible{opacity:1;transform:none}
 
-@media (max-width:900px){
-  .grid{grid-template-columns:repeat(2,1fr)}
+@media (max-width:1000px){
+  .grid{grid-template-columns:repeat(3,1fr)}
 }
 @media (max-width:640px){
-  .grid{grid-template-columns:1fr}
-  .card.ancha{grid-column:auto}
-  .card.feed{grid-template-columns:1fr;gap:24px}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .card{aspect-ratio:1}
+  .card.ancha{grid-column:span 2}
+  .card.feed{min-height:300px;grid-template-columns:1fr}
+  .feed .texto{max-width:55%}
+  .telefono{right:6%;width:120px}
+  .etiqueta small{display:none}
+  .etiqueta h3{font-size:13px}
+  .etiqueta .estrella{display:none}
   .sobre{grid-template-columns:1fr}
   nav{padding:10px 16px}
   nav .logo{font-size:16px}
   nav ul{gap:14px}
   nav ul a{font-size:13px}
-  nav ul li.opcional{display:none}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
