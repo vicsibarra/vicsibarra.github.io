@@ -7,7 +7,7 @@
 <meta name="description" content="Portfolio de Victoria Ibarra: dirección de arte, publicidad y contenido.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..800&family=Hanken+Grotesk:wght@400;500&display=swap" rel="stylesheet">
 <style>
   /* ===== PALETAS ===== */
   [data-tema="blanco"]{ --fondo:#FAF8F6; --texto:#8C0138; --fuerte:#8C0138; --sobre-fuerte:#FFD6DE; --fuerte2:#FFA1C2; --sobre-fuerte2:#8C0138; --detalle:#8C0138; --suave:#FFD6DE; --suave2:#FFF3B2; --estrella:#FFA1C2; }
@@ -19,10 +19,16 @@
   [data-tema="retro"]{ --fondo:#F3EAD2; --texto:#3A1424; --fuerte:#B33355; --sobre-fuerte:#FBE9EF; --fuerte2:#A9C6E3; --sobre-fuerte2:#2A1A3A; --detalle:#B33355; --suave:#EBB8CB; --suave2:#A9C6E3; --estrella:#B33355; }
   [data-tema="ciruela"]{ --fondo:#F5ECDD; --texto:#3A1026; --fuerte:#6E1E3B; --sobre-fuerte:#F5ECDD; --fuerte2:#6E1E3B; --sobre-fuerte2:#F5ECDD; --detalle:#D76A4D; --suave:#F9DD8A; --suave2:#E8D7BC; --estrella:#D76A4D; }
   :root{ --radio:18px; }
+  /* Tipografía: Gabarito (títulos) + Hanken Grotesk (texto) */
+  .intro h1{font-weight:600!important;letter-spacing:-.035em!important}
+  .titulo-seccion h2,.card h3,.feed h3,footer a.mail{font-weight:600!important;letter-spacing:-.02em}
+  .sobre p{font-weight:500;letter-spacing:-.01em}
+  nav .logo{font-weight:700!important}
+  em{font-style:normal}
 
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{background:var(--fondo);color:var(--texto);font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;transition:background .4s,color .4s}
+  body{background:var(--fondo);color:var(--texto);font-family:"Hanken Grotesk",system-ui,sans-serif;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;transition:background .4s,color .4s}
   a{color:inherit}
 
   /* ESTRELLAS */
@@ -34,7 +40,7 @@
 
   /* NAV */
   nav{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:18px clamp(20px,5vw,64px);background:color-mix(in srgb,var(--fondo) 88%,transparent);backdrop-filter:blur(8px)}
-  nav .logo{font-family:Fraunces,serif;font-weight:600;font-size:20px;text-decoration:none;display:flex;align-items:center;gap:8px}
+  nav .logo{font-family:Gabarito,sans-serif;font-weight:600;font-size:20px;text-decoration:none;display:flex;align-items:center;gap:8px}
   nav .logo .estrella{width:16px;height:16px}
   nav ul{display:flex;gap:clamp(14px,3vw,32px);list-style:none}
   nav ul a{text-decoration:none;font-size:14px;font-weight:500;position:relative}
@@ -43,7 +49,7 @@
 
   /* INTRO */
   .intro{position:relative;padding:clamp(48px,10vw,120px) clamp(20px,5vw,64px) clamp(40px,6vw,72px)}
-  .intro h1{font-family:Fraunces,serif;font-weight:400;font-size:clamp(40px,8vw,104px);line-height:.95;letter-spacing:-.03em;max-width:1000px}
+  .intro h1{font-family:Gabarito,sans-serif;font-weight:400;font-size:clamp(40px,8vw,104px);line-height:.95;letter-spacing:-.03em;max-width:1000px}
   .intro h1 em{color:var(--detalle)}
   .intro h1 .estrella{width:.55em;height:.55em;vertical-align:.35em;margin-left:.08em}
   .intro p{margin-top:24px;max-width:460px;font-size:17px;opacity:.75}
@@ -56,13 +62,13 @@
   /* CINTA DE ESTRELLAS */
   .cinta{overflow:hidden;background:var(--texto);color:var(--fondo);padding:14px 0;margin-bottom:clamp(48px,8vw,96px)}
   .cinta .pista{display:flex;width:max-content;animation:cinta 28s linear infinite}
-  .cinta span{display:flex;align-items:center;gap:24px;padding-right:24px;font-family:Fraunces,serif;font-size:clamp(18px,2.4vw,26px);white-space:nowrap}
+  .cinta span{display:flex;align-items:center;gap:24px;padding-right:24px;font-family:Gabarito,sans-serif;font-size:clamp(18px,2.4vw,26px);white-space:nowrap}
   .cinta .estrella{fill:var(--suave)}
   @keyframes cinta{to{transform:translateX(-50%)}}
 
   section{padding:0 clamp(20px,5vw,64px) clamp(64px,10vw,120px)}
   .titulo-seccion{display:flex;justify-content:space-between;align-items:baseline;border-top:1.5px solid var(--texto);padding-top:16px;margin-bottom:32px}
-  .titulo-seccion h2{font-family:Fraunces,serif;font-weight:400;font-size:clamp(28px,4vw,44px)}
+  .titulo-seccion h2{font-family:Gabarito,sans-serif;font-weight:400;font-size:clamp(28px,4vw,44px)}
   .titulo-seccion span{font-size:13px;opacity:.6}
 
   /* GRID DE PROYECTOS */
@@ -72,7 +78,7 @@
   .card .media{position:relative;aspect-ratio:4/3;border-radius:var(--radio);overflow:hidden;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
   .card.grande .media{aspect-ratio:16/9}
   .card:hover .media{transform:rotate(-1.2deg) scale(1.015)}
-  .slide{position:absolute;inset:0;display:grid;place-items:center;font-family:Fraunces,serif;font-size:clamp(20px,2.4vw,32px);opacity:0;transition:opacity .6s,background .4s}
+  .slide{position:absolute;inset:0;display:grid;place-items:center;font-family:Gabarito,sans-serif;font-size:clamp(20px,2.4vw,32px);opacity:0;transition:opacity .6s,background .4s}
   .slide.activa{opacity:1}
   .t1{background:var(--fuerte);color:var(--sobre-fuerte)}
   .t2{background:var(--suave);color:var(--texto)}
@@ -80,14 +86,14 @@
   .t4{background:var(--fuerte2);color:var(--sobre-fuerte2)}
   .t5{background:var(--texto);color:var(--fondo)}
   .card .info{display:flex;justify-content:space-between;gap:12px;margin-top:12px}
-  .card h3{font-family:Fraunces,serif;font-weight:400;font-size:22px;display:flex;align-items:center;gap:8px}
+  .card h3{font-family:Gabarito,sans-serif;font-weight:400;font-size:22px;display:flex;align-items:center;gap:8px}
   .card h3 .estrella{width:14px;height:14px;opacity:0;transform:scale(0) rotate(-90deg);transition:.4s cubic-bezier(.2,.8,.2,1)}
   .card:hover h3 .estrella{opacity:1;transform:none}
   .card .meta{font-size:13px;opacity:.6;text-align:right}
 
   /* COLONIA / INSTAGRAM */
   .feed{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,72px);align-items:center;background:var(--fuerte);color:var(--sobre-fuerte);border-radius:calc(var(--radio)*1.5);padding:clamp(28px,5vw,64px);overflow:hidden;transition:background .4s}
-  .feed h3{font-family:Fraunces,serif;font-weight:400;font-size:clamp(32px,4.5vw,56px);line-height:1}
+  .feed h3{font-family:Gabarito,sans-serif;font-weight:400;font-size:clamp(32px,4.5vw,56px);line-height:1}
   .feed p{margin-top:16px;max-width:380px;opacity:.85}
   .feed .deco{position:absolute;width:180px;height:180px;left:-40px;bottom:-50px;fill:var(--fuerte2);opacity:.5}
   .telefono{position:relative;justify-self:center;width:min(280px,70vw);aspect-ratio:9/19;border-radius:40px;background:var(--texto);padding:10px;box-shadow:0 30px 60px -20px rgba(0,0,0,.45);transform:rotate(4deg)}
@@ -99,9 +105,9 @@
 
   /* SOBRE MÍ */
   .sobre{display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,5vw,72px);align-items:start}
-  .foto{position:relative;aspect-ratio:4/5;border-radius:var(--radio);background:var(--suave);display:grid;place-items:center;font-family:Fraunces,serif;transform:rotate(-2deg)}
+  .foto{position:relative;aspect-ratio:4/5;border-radius:var(--radio);background:var(--suave);display:grid;place-items:center;font-family:Gabarito,sans-serif;transform:rotate(-2deg)}
   .foto .estrella{position:absolute;width:56px;height:56px;top:-20px;right:-16px}
-  .sobre p{font-size:clamp(18px,2vw,24px);line-height:1.4;font-family:Fraunces,serif;margin-bottom:20px}
+  .sobre p{font-size:clamp(18px,2vw,24px);line-height:1.4;font-family:Gabarito,sans-serif;margin-bottom:20px}
   .sobre p em{color:var(--detalle)}
   .herramientas{display:flex;flex-wrap:wrap;gap:6px 14px;list-style:none;font-size:14px}
   .herramientas li{display:flex;align-items:center;gap:6px;opacity:.8}
@@ -109,7 +115,7 @@
 
   /* CONTACTO */
   footer{position:relative;overflow:hidden;background:var(--fuerte2);color:var(--sobre-fuerte2);padding:clamp(48px,8vw,96px) clamp(20px,5vw,64px) 28px;transition:background .4s}
-  footer a.mail{font-family:Fraunces,serif;font-size:clamp(32px,7vw,88px);line-height:1;text-decoration:none;display:inline-block;border-bottom:2px solid transparent;transition:border-color .3s}
+  footer a.mail{font-family:Gabarito,sans-serif;font-size:clamp(32px,7vw,88px);line-height:1;text-decoration:none;display:inline-block;border-bottom:2px solid transparent;transition:border-color .3s}
   footer a.mail:hover{border-color:currentColor}
   footer .redes{display:flex;gap:24px;margin-top:40px;font-size:14px;font-weight:500}
   footer small{display:block;margin-top:48px;opacity:.7;font-size:12px}
